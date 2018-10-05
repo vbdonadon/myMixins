@@ -27,12 +27,16 @@
 } 
 
 // CREATING A BOX 
-@mixin createBox($widthSize: 100px, $heightSize: 100px, $backgroundColor: #000000, $displayType: block){
+@mixin newBox($widthSize: null, $heightSize: null, $backgroundColor: #fff, $displayType: block){
     width: 100%;
     max-width: $widthSize;
     height: $heightSize;
     background: $backgroundColor;
     display: $displayType;
+
+    @if $heightSize == null {
+        $heightSize: $widthSize;
+    } 
 }
 
 // EDITING A TEXT
